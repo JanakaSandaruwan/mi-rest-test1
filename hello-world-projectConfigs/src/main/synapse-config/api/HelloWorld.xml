@@ -2,6 +2,9 @@
 <api context="/HelloWorld" name="HelloWorld" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="GET">
         <inSequence>
+            <log level="custom">
+                <property name="SuccessMessage" value="Successfully fetched the weather forecast data."/>
+            </log>
             <payloadFactory media-type="json">
                 <format>{"Hello":"Janaka 2"}</format>
                 <args/>
