@@ -2,8 +2,13 @@
 <api context="/HelloWorld" name="HelloWorld" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="GET">
         <inSequence>
-            <log level="custom">
-                <property name="SuccessMessage" value="Successfully fetched the weather forecast data."/>
+            <log category="INFO" level="custom">
+                <property name="SuccessMessage" value="{
+                    &#10;    &quot;name&quot;: &quot;John Doe&quot;,&#10;
+                    &#10;    &quot;age&quot;: 30,&#10;
+                    &#10;    &quot;email&quot;: &quot;john.doe@example.com&quot;,&#10;
+                    &#10;    &quot;isVerified&quot;: true&#10;
+                }"/>
             </log>
             <payloadFactory media-type="json">
                 <format>{"Hello":"Janaka 2"}</format>
